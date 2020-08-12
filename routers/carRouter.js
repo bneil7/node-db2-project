@@ -26,7 +26,6 @@ router.post("/", (req, res) => {
 
   db("cars")
     .insert(body)
-    .returning(id)
     .then(ids => {
       res.status(201).json({ inserted: ids });
     })
